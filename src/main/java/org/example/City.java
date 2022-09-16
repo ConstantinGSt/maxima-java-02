@@ -3,12 +3,20 @@ package org.example;
 public class City {
     private String name;
     private int distance;
+    private boolean hasAirport;
+    private boolean isOnWater;
 
-    public City() {
+    public City(String name, int distance, boolean hasAirport, boolean isOnWater) {
+        this.name = name;
+        this.distance = distance;
+        this.hasAirport = hasAirport;
+        this.isOnWater = isOnWater;
         }
     public City(String name, int distance) {
         this.name = name;
         this.distance = distance;
+        this.hasAirport = false;
+        this.isOnWater = true;
     }
 
     public String getName() {
@@ -23,5 +31,21 @@ public class City {
     }
     public void setDistance(int distance) {
         this.distance = distance;
+    }
+
+    public boolean isHasAirport() {
+        return hasAirport;
+    }
+
+    public void setHasAirport(boolean hasAirport) {
+        this.hasAirport = hasAirport;
+    }
+
+    public boolean isOnWater() {
+        return isOnWater;
+    }
+
+    public void setOnWater(boolean onWater) {
+        this.isOnWater = onWater;
     }
 }

@@ -8,9 +8,6 @@ public class Transport {
     private int speed;
     private float costOfKm;
 
-    public Transport(){
-        };
-
     public Transport(String name, int capacity, int speed, float costOfKm) {
         this.name = name;
         this.capacity = capacity;
