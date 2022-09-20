@@ -1,15 +1,16 @@
 package org.example;
 
 public class Logistics {
-	private Logistics[] vehicles;
+	private Transport[] vehicles;
+//	public Logistics(Transport[] vehicles) {
+//		this.vehicles = vehicles;
+//	}
 
 
-	public Logistics getVehicles(int i) {
+	public Logistics(Transport ... vehicles) {
+		this.vehicles = vehicles;
+	}
+	public Transport getVehicles(int i) {
 		return vehicles[i];
 	}
-
-	public void setVehicles(Object ... vehicles) {
-		this.vehicles = new Logistics[vehicles.length];
-	}
-
 }

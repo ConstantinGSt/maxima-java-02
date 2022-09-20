@@ -5,6 +5,8 @@ public abstract class Transport {
     private int capacity;
     private int speed;
     private float costOfKm;
+//    private int weight;
+//    private int hours;
 
 
     public Transport(String name, int capacity, int speed, float costOfKm) {
@@ -12,9 +14,6 @@ public abstract class Transport {
         this.capacity = capacity;
         this.speed = speed;
         this.costOfKm = costOfKm;
-    }
-    public int getShipping(City city, int weight, int time) {
-        return 0;
     }
     public abstract float getPrice(City city);
 
