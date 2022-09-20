@@ -11,4 +11,5 @@ public class Logistics {
 	public void setVehicles(Object ... vehicles) {
 		this.vehicles = new Logistics[vehicles.length];
 	}
+
 }
