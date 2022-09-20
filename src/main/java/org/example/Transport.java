@@ -12,7 +12,9 @@ public abstract class Transport {
         this.speed = speed;
         this.costOfKm = costOfKm;
     }
-
+    public int getShipping(City city, int weight, int time) {
+        return 0;
+    }
     public abstract float getPrice(City city);
 
     public String getName() {
