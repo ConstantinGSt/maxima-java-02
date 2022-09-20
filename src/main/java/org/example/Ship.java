@@ -7,7 +7,7 @@ public class Ship extends Transport {
 	}
 	public float getPrice(City city) {
 		if(city.isOnWater() == true) {
-			return (float) (city.getDistance() * getCostOfKm());
+			return (float) (city.getDistanceKm() * getCostOfKm());
 		} else return 0;
 	}
 }

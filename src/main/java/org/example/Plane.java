@@ -7,8 +7,8 @@ public class Plane extends Transport {
 	}
 
 	public float getPrice(City city) {
-		if(city.isHasAirport() == true) {
-			return (float) (city.getDistance() * getCostOfKm());
+		if(city.hasAirport() == true) {
+			return (float) (city.getDistanceKm() * getCostOfKm());
 		} else return 0;
 	}
 }

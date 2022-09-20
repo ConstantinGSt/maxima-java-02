@@ -1,7 +1,5 @@
 package org.example;
 
-import org.jetbrains.annotations.NotNull;
-
 public class Transport {
     private String name;
     private int capacity;
@@ -16,7 +14,7 @@ public class Transport {
     }
 
     public float getPrice(City city) {
-        return (float) (city.getDistance() * getCostOfKm());
+        return (float) (city.getDistanceKm() * getCostOfKm());
     }
 
     public String getName() {

@@ -2,19 +2,19 @@ package org.example;
 
 public class City {
     private String name;
-    private int distance;
+    private int distanceKm;
     private boolean hasAirport;
     private boolean isOnWater;
 
-    public City(String name, int distance, boolean hasAirport, boolean isOnWater) {
+    public City(String name, int distanceKm, boolean hasAirport, boolean isOnWater) {
         this.name = name;
-        this.distance = distance;
+        this.distanceKm = distanceKm;
         this.hasAirport = hasAirport;
         this.isOnWater = isOnWater;
         }
-    public City(String name, int distance) {
+    public City(String name, int distanceKm) {
         this.name = name;
-        this.distance = distance;
+        this.distanceKm = distanceKm;
         this.hasAirport = false;
         this.isOnWater = true;
     }
@@ -26,14 +26,14 @@ public class City {
         this.name = name;
     }
 
-    public int getDistance() {
-        return distance;
+    public int getDistanceKm() {
+        return distanceKm;
     }
-    public void setDistance(int distance) {
-        this.distance = distance;
+    public void setDistanceKm(int distanceKm) {
+        this.distanceKm = distanceKm;
     }
 
-    public boolean isHasAirport() {
+    public boolean hasAirport() {
         return hasAirport;
     }
 
