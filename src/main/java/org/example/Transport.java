@@ -16,7 +16,6 @@ public abstract class Transport {
         this.costOfKm = costOfKm;
     }
 
-    
     public abstract float getPrice(City city);
 
     public String getName() {

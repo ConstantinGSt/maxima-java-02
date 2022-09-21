@@ -10,7 +10,7 @@ public class App {
         City sosedsk = new City("Sosedsk", 15);
         City stoliciya = new City("BigSity", 578, true,true);
 
-        Truck chetverka = new Truck("Kolimaga", 1, 19, 5.75f);
+        Truck chetverka = new Truck("Kolimaga", 1, 19, 4.0f);
         Truck kamaz = new Truck("Kamazz", 25, 90, 30f);
         Plane an2 = new Plane("An-2", 3,180, 250);
         Plane tu = new Plane("Tu-154", 18,900, 1000);
@@ -21,13 +21,13 @@ public class App {
         System.out.println("Стоимость камаза до Соседска: " + kamaz.getPrice(sosedsk));
         System.out.println("Стоимость Ан-2 до Гондураса: " + an2.getPrice(gonduras));
         System.out.println("Стоимость Tu-154 до Соседска: " + tu.getPrice(sosedsk));
-        System.out.println("Стоимость Black Pearl до BigSity: " + sailBoat.getPrice(stoliciya));
+        System.out.println("Стоимость Black Pearl до BigСity: " + sailBoat.getPrice(stoliciya));
         System.out.println("Стоимость Angara до Гондураса: " + seiner.getPrice(gonduras));
         System.out.println("Стоимость Angara до Соседска: " + seiner.getPrice(sosedsk));
 
         Logistics test = new Logistics(kamaz, chetverka, an2, tu, sailBoat, seiner);
 
-        System.out.println("Стоимость Angara до Соседска: " + test.getShipping(sosedsk, 10, 30));
-        
+        System.out.printf("вариант Транспорта до города: %s%n", test.getShipping(gonduras, 1, 30));
+
     }
 }
