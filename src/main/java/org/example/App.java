@@ -25,7 +25,9 @@ public class App {
         System.out.println("Стоимость Angara до Гондураса: " + seiner.getPrice(gonduras));
         System.out.println("Стоимость Angara до Соседска: " + seiner.getPrice(sosedsk));
 
-        System.out.println("Стоимость Angara до Соседска: " + tu.getShipping(sosedsk, 10, 30));
+        Logistics test = new Logistics(kamaz, chetverka, an2, tu, sailBoat, seiner);
+
+        System.out.println("Стоимость Angara до Соседска: " + test.getShipping(sosedsk, 10, 30));
         
     }
 }
