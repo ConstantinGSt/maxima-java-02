@@ -3,7 +3,7 @@ package org.example;
 public class Ship extends Transport implements Repairable {
 
 	public Ship(String name, int capacity, int speed, float costOfKm) {
-		super(name, speed, capacity, costOfKm);
+		super(name, capacity, speed, costOfKm);
 	}
 	public float getPrice(City city) {
 		if(city.isOnWater() == true) {
