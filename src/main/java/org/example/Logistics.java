@@ -5,23 +5,26 @@ public class Logistics {
     public Logistics(Transport ... vehicles) {
 		this.vehicles = vehicles;
 		}
+	private Transport[] min = new Transport[1]; // подмена на getShipping
+
 	public Transport getShipping(City city, int weight, int hours) {
-		int j = 0;
-		for(int i = vehicles.length-1; i >= 0; i--) {
-			if(vehicles[i].getCapacity() >= weight ) {
-				if(city.getDistanceKm()/vehicles[i].getSpeed() <= hours) {
-					if(vehicles[i].getPrice(city) < vehicles[0].getPrice(city)) {
-							j = i;
-					}
-				}
+		for(int j = 0; j < vehicles.length; j++) {
+			if(vehicles[j].getCapacity() >0) {
+				min[0] = vehicles[j];
+				break;
 			}
-		} return vehicles[j];
+		}
+		for(int i = 0; i < vehicles.length; i++) {
+			if(min[0].getPrice(city) > vehicles[i].getPrice(city) &&
+					vehicles[i].getPrice(city) > 0) {
+				min[0] = vehicles[i];
+			}
+		} return min[0];
 	}
 	private boolean  isShippingAvailable() {
 
 		return true;
 	}
-
 
 	public Transport[] getVehicles() {
 		return vehicles;
