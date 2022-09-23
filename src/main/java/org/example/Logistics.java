@@ -19,7 +19,7 @@ public class Logistics {
 		}
 		for(int i = 0; i < vehicles.length; i++) {
 			if(vehicles[i].getCapacity() >= weight &&
-					(city.getDistanceKm() / vehicles[i].getSpeed() <= hours || hours ==0)) {
+								(city.getDistanceKm() / vehicles[i].getSpeed() <= hours || hours ==0)) {
 				if(min[0].getPrice(city) > vehicles[i].getPrice(city) && vehicles[i].getPrice(city) > 0) {
 					min[0] = vehicles[i];
 				}
