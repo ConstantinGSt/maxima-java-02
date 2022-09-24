@@ -11,7 +11,7 @@ public class Logistics {
 		for(int j = 0; j < vehicles.length; j++) {
 			if(vehicles[j].getCapacity() >= weight &&
 								(city.getDistanceKm() / vehicles[j].getSpeed() <= hours || hours ==0)) {
-				if(vehicles[j].getCapacity() > 0) {
+				if(vehicles[j].getPrice(city) > 0) {
 					min[0] = vehicles[j];
 					break;
 				}
@@ -27,11 +27,6 @@ public class Logistics {
 		} return min[0];
 	}
 
-//	private boolean isShippingAvailable(City city, int weight, int hours, int i) {
-//		if(vehicles.getCapacity() >= weight && city.getDistanceKm() / vehicles.getSpeed() <= hours) {
-//			return true;
-//			} return false;
-//		}
 	private boolean  isShippingAvailable() {
 
 		return true;

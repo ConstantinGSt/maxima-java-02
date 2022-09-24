@@ -11,7 +11,7 @@ public class App {
         City stoliciya = new City("BigSity", 578, true,true);
 
         Truck chetverka = new Truck("Kolimaga", 1, 19, 4.0f);
-        Truck kamaz = new Truck("Kamazz", 2, 90, 300f);
+        Truck kamaz = new Truck("Kamazz", 8, 90, 300f);
         Plane an2 = new Plane("An-2", 3,180, 250f);
         Plane tu = new Plane("Tu-154", 18,900, 1000f);
         Ship sailBoat = new Ship("Black Pearl", 685, 20, 100f);
@@ -27,7 +27,7 @@ public class App {
 
         Logistics test = new Logistics(kamaz, chetverka, an2, tu, sailBoat, seiner);
 
-        System.out.printf("вариант Транспорта до города: %s%n", test.getShipping(gonduras, 3, 0));
+        System.out.printf("вариант Транспорта до города: %s%n", test.getShipping(gonduras, 3, 15));
 
     }
 }
