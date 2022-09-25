@@ -18,15 +18,15 @@ public abstract class Transport implements Repairable {
     public abstract float getPrice(City city);
 
     public void startRepair() {
-        this.repairing = true;
+        setFinishRepair(true);
     }
 
     public void finishRepair() {
-        this.repairing = false;
+        setFinishRepair(false);
     }
 
     public boolean isRepairing() {
-        if(this.repairing == true) {
+        if(isFinishRepair()) {
             return true;
         } return false;
     }

@@ -12,19 +12,6 @@ public class Truck extends Transport {
 		return (float) (city.getDistanceKm() * getCostOfKm());
 	}
 
-	public void startRepair() {
-		setFinishRepair(true);
-	}
-
-	public void finishRepair() {
-		setFinishRepair(false);
-	}
-
-	public boolean isRepairing() {
-		if(isFinishRepair()) {
-			return true;
-		} return false;
-	}
 }
 
 

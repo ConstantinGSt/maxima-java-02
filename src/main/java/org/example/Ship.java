@@ -11,20 +11,6 @@ public class Ship extends Transport {
 			return (float) (city.getDistanceKm() * getCostOfKm());
 		} else return 0;
 	}
-
-	public void startRepair() {
-		setFinishRepair(false);
-	}
-
-	public void finishRepair() {
-		setFinishRepair(true);
-	}
-
-	public boolean isRepairing() {
-		if(isFinishRepair()) {
-			return true;
-		} return false;
-	}
 }
 
 

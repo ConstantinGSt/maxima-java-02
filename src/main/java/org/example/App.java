@@ -20,11 +20,11 @@ public class App {
         Ship seiner = new Ship("Angara", 160,24,200f);
 
         kamaz.startRepair();
-        chetverka.isFinishRepair();
-        an2.isFinishRepair();
-        tu.isFinishRepair();
+        chetverka.finishRepair();
+        an2.finishRepair();
+        tu.finishRepair();
         sailBoat.startRepair();
-        seiner.isFinishRepair();
+        seiner.finishRepair();
 
 
         Logistics test = new Logistics(kamaz, chetverka, an2, tu, sailBoat, seiner);
