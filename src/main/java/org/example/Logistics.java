@@ -7,11 +7,9 @@ public class Logistics {
         this.vehicles = vehicles;
     }
 
-    private Transport min = null; // подмена на getShipping
-
     public Transport getShipping(City city, int weight, int hours) {
-
-//        Transport min = null;
+        
+        Transport min = null; // подмена на getShipping
 
         for(int i = 0, counter = 0; i < vehicles.length; i++) {
             if(vehicles[i].isRepairing() && isShippingAvailable(city, weight, hours, i) && vehicles[i].getPrice(city) > 0) {
@@ -20,7 +18,6 @@ public class Logistics {
                     min = vehicles[i].getPrice(city) < min.getPrice(city) ? vehicles[i] : min;
                 } else {
                     min = vehicles[i];
-                    continue;
                 }
             }
         }
