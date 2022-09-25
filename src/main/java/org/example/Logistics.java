@@ -7,22 +7,20 @@ public class Logistics {
         this.vehicles = vehicles;
     }
 
-    private Transport min; // подмена на getShipping
+    private Transport min = null; // подмена на getShipping
 
     public Transport getShipping(City city, int weight, int hours) {
 
-        for(int j = 0; j < vehicles.length; j++) {
-            if((vehicles[j].isRepairing() && isShippingAvailable(city, weight, hours, j) == true)) {
-                if(vehicles[j].getPrice(city) > 0) {
-                    min = vehicles[j];
-                    break;
-                }
-            }
-        }
-        for(int i = 0; i < vehicles.length; i++) {
-            if((vehicles[i].isRepairing() && isShippingAvailable(city, weight, hours, i) == true)) {
-                if(min.getPrice(city) > vehicles[i].getPrice(city) && vehicles[i].getPrice(city) > 0) {
+//        Transport min = null;
+
+        for(int i = 0, counter = 0; i < vehicles.length; i++) {
+            if(vehicles[i].isRepairing() && isShippingAvailable(city, weight, hours, i) && vehicles[i].getPrice(city) > 0) {
+                counter++;
+                if(counter > 1) {
+                    min = vehicles[i].getPrice(city) < min.getPrice(city) ? vehicles[i] : min;
+                } else {
                     min = vehicles[i];
+                    continue;
                 }
             }
         }

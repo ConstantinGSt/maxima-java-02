@@ -13,10 +13,12 @@ public class Truck extends Transport {
 	}
 
 	public void startRepair() {
-		}
+		setFinishRepair(false);
+	}
 
 	public void finishRepair() {
-		}
+		setFinishRepair(true);
+	}
 
 	public boolean isRepairing() {
 		if(isFinishRepair() == true) {
