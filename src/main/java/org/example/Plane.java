@@ -13,18 +13,17 @@ public class Plane extends Transport {
 	}
 
 	public void startRepair() {
-		setFinishRepair(false);
-	}
-
-	public void finishRepair() {
 		setFinishRepair(true);
 	}
 
+	public void finishRepair() {
+		setFinishRepair(false);
+	}
+
 	public boolean isRepairing() {
-		if(isFinishRepair() == true) {
+		if(isFinishRepair()) {
 			return true;
-		}
-		return false;
+		} return false;
 	}
 
 }

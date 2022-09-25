@@ -21,10 +21,9 @@ public class Ship extends Transport {
 	}
 
 	public boolean isRepairing() {
-		if(isFinishRepair() == true) {
+		if(isFinishRepair()) {
 			return true;
-		}
-		return false;
+		} return false;
 	}
 }
 

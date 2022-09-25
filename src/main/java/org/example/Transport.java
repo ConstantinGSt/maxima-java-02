@@ -5,32 +5,30 @@ public abstract class Transport implements Repairable {
     private int capacity;
     private int speed;
     private float costOfKm;
-
-    private boolean finishRepair;
+    private boolean repairing;
 
     public Transport(String name, int capacity, int speed, float costOfKm) {
         this.name = name;
         this.capacity = capacity;
         this.speed = speed;
         this.costOfKm = costOfKm;
-        this.finishRepair = true;
+        this.repairing = false;
     }
 
     public abstract float getPrice(City city);
 
     public void startRepair() {
-        this.finishRepair = false;
+        this.repairing = true;
     }
 
     public void finishRepair() {
-        this.finishRepair = true;
+        this.repairing = false;
     }
 
     public boolean isRepairing() {
-        if(this.finishRepair == true) {
+        if(this.repairing == true) {
             return true;
-        }
-        return false;
+        } return false;
     }
 
     public String getName() {
@@ -66,11 +64,11 @@ public abstract class Transport implements Repairable {
     }
 
     public boolean isFinishRepair() {
-        return finishRepair;
+        return repairing;
     }
 
-    public void setFinishRepair(boolean finishRepair) {
-        this.finishRepair = finishRepair;
+    public void setFinishRepair(boolean repairing) {
+        this.repairing = repairing;
     }
 
 }
