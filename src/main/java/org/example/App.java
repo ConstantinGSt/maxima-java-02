@@ -16,7 +16,12 @@ public class App {
         Plane tu = new Plane("Tu-154", 18,900, 1000f);
         Ship sailBoat = new Ship("Black Pearl", 685, 20, 100f);
         Ship seiner = new Ship("Angara", 160,24,200f);
-        
+        kamaz.startRepair();
+        chetverka.isFinishRepair();
+        an2.finishRepair();
+        tu.isFinishRepair();
+        sailBoat.startRepair();
+        seiner.isFinishRepair();
         System.out.println("Стоимость колымаги до Гондураса: " + chetverka.getPrice(gonduras));
         System.out.println("Стоимость камаза до Соседска: " + kamaz.getPrice(sosedsk));
         System.out.println("Стоимость Ан-2 до Гондураса: " + an2.getPrice(gonduras));
@@ -27,7 +32,7 @@ public class App {
 
         Logistics test = new Logistics(kamaz, chetverka, an2, tu, sailBoat, seiner);
 
-        System.out.printf("вариант Транспорта до города: %s%n", test.getShipping(gonduras, 3, 15));
+        System.out.printf("вариант Транспорта до города: %s%n", test.getShipping(gonduras, 3, 150));
 
     }
 }

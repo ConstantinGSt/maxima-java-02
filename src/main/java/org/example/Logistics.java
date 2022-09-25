@@ -1,38 +1,40 @@
 package org.example;
 
 public class Logistics {
-	private Transport[] vehicles;
-    public Logistics(Transport ... vehicles) {
-		this.vehicles = vehicles;
-		}
-	private Transport[] min = new Transport[1]; // подмена на getShipping
+    private Transport[] vehicles;
 
-	public Transport getShipping(City city, int weight, int hours) {
-		for(int j = 0; j < vehicles.length; j++) {
-			if(vehicles[j].getCapacity() >= weight &&
-								(city.getDistanceKm() / vehicles[j].getSpeed() <= hours || hours ==0)) {
-				if(vehicles[j].getPrice(city) > 0) {
-					min[0] = vehicles[j];
-					break;
-				}
-			}
-		}
-		for(int i = 0; i < vehicles.length; i++) {
-			if(vehicles[i].getCapacity() >= weight &&
-								(city.getDistanceKm() / vehicles[i].getSpeed() <= hours || hours ==0)) {
-				if(min[0].getPrice(city) > vehicles[i].getPrice(city) && vehicles[i].getPrice(city) > 0) {
-					min[0] = vehicles[i];
-				}
-			}
-		} return min[0];
-	}
+    public Logistics(Transport... vehicles) {
+        this.vehicles = vehicles;
+    }
 
-	private boolean  isShippingAvailable() {
+    private Transport min; // подмена на getShipping
 
-		return true;
-	}
+    public Transport getShipping(City city, int weight, int hours) {
 
-	public Transport[] getVehicles() {
-		return vehicles;
-	}
+        for(int j = 0; j < vehicles.length; j++) {
+            if((vehicles[j].isRepairing() && isShippingAvailable(city, weight, hours, j) == true)) {
+                if(vehicles[j].getPrice(city) > 0) {
+                    min = vehicles[j];
+                    break;
+                }
+            }
+        }
+        for(int i = 0; i < vehicles.length; i++) {
+            if((vehicles[i].isRepairing() && isShippingAvailable(city, weight, hours, i) == true)) {
+                if(min.getPrice(city) > vehicles[i].getPrice(city) && vehicles[i].getPrice(city) > 0) {
+                    min = vehicles[i];
+                }
+            }
+        }
+        return min;
+    }
+
+    private boolean isShippingAvailable(City city, int weight, int hours, int i) {
+        return vehicles[i].getCapacity() >= weight &&
+                (city.getDistanceKm() / vehicles[i].getSpeed() <= hours || hours == 0);
+    }
+
+    public Transport[] getVehicles() {
+        return vehicles;
+    }
 }

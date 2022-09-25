@@ -1,6 +1,6 @@
 package org.example;
 
-public class Plane extends Transport implements Repairable {
+public class Plane extends Transport {
 
 	public Plane(String name, int capacity, int speed, float costOfKm) {
 		super(name, capacity, speed, costOfKm);
@@ -12,18 +12,17 @@ public class Plane extends Transport implements Repairable {
 		} else return 0;
 	}
 
-	@Override
 	public void startRepair() {
-
 	}
 
-	@Override
 	public void finishRepair() {
-
 	}
 
-	@Override
 	public boolean isRepairing() {
+		if(isFinishRepair() == true) {
+			return true;
+		}
 		return false;
 	}
+
 }

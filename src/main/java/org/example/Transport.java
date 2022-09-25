@@ -1,22 +1,37 @@
 package org.example;
 
-public abstract class Transport {
+public abstract class Transport implements Repairable {
     private String name;
     private int capacity;
     private int speed;
     private float costOfKm;
-//    private int weight;
-//    private int hours;
 
+    private boolean finishRepair;
 
     public Transport(String name, int capacity, int speed, float costOfKm) {
         this.name = name;
         this.capacity = capacity;
         this.speed = speed;
         this.costOfKm = costOfKm;
+        this.finishRepair = true;
     }
 
     public abstract float getPrice(City city);
+
+    public void startRepair() {
+        this.finishRepair = false;
+    }
+
+    public void finishRepair() {
+        this.finishRepair = true;
+    }
+
+    public boolean isRepairing() {
+        if(this.finishRepair == true) {
+            return true;
+        }
+        return false;
+    }
 
     public String getName() {
         return name;
@@ -49,4 +64,13 @@ public abstract class Transport {
     public void setCostOfKm(double costOfKm) {
         this.costOfKm = (float) costOfKm;
     }
+
+    public boolean isFinishRepair() {
+        return finishRepair;
+    }
+
+    public void setFinishRepair(boolean finishRepair) {
+        this.finishRepair = finishRepair;
+    }
+
 }
