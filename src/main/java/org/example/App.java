@@ -30,6 +30,7 @@ public class App {
         Logistics test = new Logistics(kamaz, chetverka, an2, tu, sailBoat, seiner);
 
         System.out.printf("вариант Транспорта до города: %s%n", test.getShipping(gonduras, 3, 150));
-
+        int weight = 615;
+        System.out.println((weight / 500 * 500) + 500);
     }
 }
