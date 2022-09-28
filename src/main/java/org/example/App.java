@@ -1,5 +1,12 @@
 package org.example;
 
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+import java.util.Calendar;
+
+import static java.time.temporal.ChronoUnit.DAYS;
+
 /**
  * Hello world!
  *
@@ -26,11 +33,14 @@ public class App {
         sailBoat.startRepair();
         seiner.finishRepair();
 
-
         Logistics test = new Logistics(kamaz, chetverka, an2, tu, sailBoat, seiner);
 
         System.out.printf("вариант Транспорта до города: %s%n", test.getShipping(gonduras, 3, 150));
         int weight = 615;
         System.out.println((weight / 500 * 500) + 500);
+
+        System.out.println(Birthday.getAge(1981,11,6));
+        System.out.println(Birthday.nextBirthday(1981,11,6));
+
     }
 }
