@@ -36,11 +36,15 @@ public class App {
         Logistics test = new Logistics(kamaz, chetverka, an2, tu, sailBoat, seiner);
 
         System.out.printf("вариант Транспорта до города: %s%n", test.getShipping(gonduras, 3, 150));
-        int weight = 615;
-        System.out.println((weight / 500 * 500) + 500);
+        int weight = 490;
+        if((weight / 500 != 0) && (weight / 10 != 0)){
+            System.out.println(weight);
+        } else System.out.println("округляем вес " + ((weight / 500 * 500) + 500));
 
         System.out.println(Birthday.getAge(1981,11,6));
         System.out.println(Birthday.nextBirthday(1981,11,6));
+
+        System.out.println(TransportFactory.getTransport(sosedsk, 160, 10));
 
     }
 }
