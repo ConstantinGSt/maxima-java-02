@@ -10,34 +10,28 @@ public class TransportFactory {
         final String truckName = "Universal truck";
         final float truckCoast = 50;
         int speed = city.getDistanceKm() / hours;
-        if (speed <= 40) {
-            if (city.isOnWater()) {
-                roundedSpeed(city, hours);
-                roundedCapacity(weight);
-                Ship standartShip = new Ship(shipName, roundedCapacity(weight), roundedSpeed(city, hours), shipCoast);
-                return standartShip;
-            }
-            if (speed >= 120) {
-                if (city.hasAirport()) {
-                    roundedSpeed(city, hours);
-                    roundedCapacity(weight);
-                    Plane standartPlane = new Plane(planeName, roundedCapacity(weight), roundedSpeed(city, hours), planeCoast);
-                    return standartPlane;
-                }
-            }
+        if((speed <= 40) && city.isOnWater()) {
+            Ship standartShip = new Ship(shipName, roundedCapacity(weight), roundedSpeed(city, hours), shipCoast);
+            return standartShip;
+        } else if((speed >= 120) && city.hasAirport()) {
+            roundedSpeed(city, hours);
+            roundedCapacity(weight);
+            Plane standartPlane = new Plane(planeName, roundedCapacity(weight), roundedSpeed(city, hours), planeCoast);
+            return standartPlane;
         }
         Truck standartTruck = new Truck(truckName, roundedCapacity(weight), roundedSpeed(city, hours), truckCoast);
         return standartTruck;
     }
 
     private static int roundedSpeed(City city, int hours) {
-        if(((city.getDistanceKm() / hours)  / 500 != 0) && ((city.getDistanceKm() / hours)  / 10 != 0)) {
+        if((city.getDistanceKm() / hours) / 10 != 0) {
             return (city.getDistanceKm() / hours);
-        } return ((city.getDistanceKm() / hours) / 10 * 10) + 10;
+        }
+        return ((city.getDistanceKm() / hours) / 10 * 10) + 10;
     }
 
     private static int roundedCapacity(int weight) {
-        if((weight / 500 != 0) && (weight / 10 != 0)) {
+        if(weight / 500 != 0) {
             return weight;
         }
         return ((weight) / 500 * 500) + 500;

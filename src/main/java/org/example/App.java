@@ -15,7 +15,7 @@ public class App {
     public static void main(String[] args) {
         City gonduras = new City("Gonduras", 2000,true,false);
         City sosedsk = new City("Sosedsk", 15);
-        City stoliciya = new City("BigSity", 578, true,true);
+        City stoliciya = new City("BigSity", 9100, true,true);
 
         Truck chetverka = new Truck("Kolimaga", 1, 19, 4.0f);
         Truck kamaz = new Truck("Kamazz", 8, 90, 300f);
@@ -36,15 +36,12 @@ public class App {
         Logistics test = new Logistics(kamaz, chetverka, an2, tu, sailBoat, seiner);
 
         System.out.printf("вариант Транспорта до города: %s%n", test.getShipping(gonduras, 3, 150));
-        int weight = 490;
-        if((weight / 500 != 0) && (weight / 10 != 0)){
-            System.out.println(weight);
-        } else System.out.println("округляем вес " + ((weight / 500 * 500) + 500));
 
         System.out.println(Birthday.getAge(1981,11,6));
         System.out.println(Birthday.nextBirthday(1981,11,6));
 
-        System.out.println(TransportFactory.getTransport(sosedsk, 160, 10));
+        TransportFactory.getTransport(stoliciya, 3500, 70);
+        System.out.println();
 
     }
 }
