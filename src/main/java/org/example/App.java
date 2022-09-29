@@ -39,9 +39,26 @@ public class App {
 
         System.out.println(Birthday.getAge(1981,11,6));
         System.out.println(Birthday.nextBirthday(1981,11,6));
+        int weight = 3275;
+        if(weight % 500 == 0) {
+            System.out.println(weight);
+        }
+        System.out.println(((weight) / 500 * 500) + 500);
 
-        TransportFactory.getTransport(stoliciya, 3500, 70);
-        System.out.println();
+        int hours = 65;
+            if((9100 / hours) % 10 == 0) {
+            System.out.println(9100 / hours);
+
+            }else System.out.println(((9100 / hours) /10 * 10) + 10);
+
+
+
+
+//        toString(TransportFactory.getTransport(stoliciya, 3300, 70));
 
     }
+
+
+
+
 }

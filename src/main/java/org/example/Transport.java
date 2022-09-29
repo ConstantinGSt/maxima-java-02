@@ -7,7 +7,7 @@ public abstract class Transport implements Repairable {
     private float costOfKm;
     private boolean repairing;
 
-    public Transport(String name, int capacity, int speed, float costOfKm) {
+        public Transport(String name, int capacity, int speed, float costOfKm) {
         this.name = name;
         this.capacity = capacity;
         this.speed = speed;
@@ -70,5 +70,14 @@ public abstract class Transport implements Repairable {
     public void setFinishRepair(boolean repairing) {
         this.repairing = repairing;
     }
-
+    @Override
+    public String toString() {
+        return "Transport{" +
+                "name='" + name + '\'' +
+                ", capacity=" + capacity +
+                ", speed=" + speed +
+                ", costOfKm=" + costOfKm +
+                ", repairing=" + repairing +
+                '}';
+    }
 }
