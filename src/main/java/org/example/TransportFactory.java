@@ -14,8 +14,6 @@ public class TransportFactory {
             Ship standartShip = new Ship(shipName, roundedCapacity(weight), roundedSpeed(city, hours), shipCoast);
             return standartShip;
         } else if((speed >= 120) && city.hasAirport()) {
-            roundedSpeed(city, hours);
-            roundedCapacity(weight);
             Plane standartPlane = new Plane(planeName, roundedCapacity(weight), roundedSpeed(city, hours), planeCoast);
             return standartPlane;
         }
