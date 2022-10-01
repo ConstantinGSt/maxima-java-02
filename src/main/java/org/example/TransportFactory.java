@@ -26,7 +26,7 @@ public class TransportFactory {
     }
 
     private static int roundedCapacity(int weight) {
-        if(weight / 500 != 0) {
+        if(weight % 500 == 0) {
             return weight;
         }
         return ((weight) / 500 * 500) + 500;
