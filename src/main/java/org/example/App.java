@@ -1,16 +1,5 @@
 package org.example;
 
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
-import java.util.Calendar;
-
-import static java.time.temporal.ChronoUnit.DAYS;
-
-/**
- * Hello world!
- *
- */
 public class App {
     public static void main(String[] args) {
         City gonduras = new City("Gonduras", 2000,true,false);

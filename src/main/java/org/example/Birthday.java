@@ -1,11 +1,9 @@
 package org.example;
 
 import java.time.LocalDate;
-
 import static java.time.temporal.ChronoUnit.DAYS;
 
 public class Birthday {
-
 
     static int getAge(int year, int month, int date) {
         LocalDate birthDate = LocalDate.of(year, month, date);
