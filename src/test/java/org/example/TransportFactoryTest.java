@@ -89,5 +89,5 @@ public class TransportFactoryTest {
 		transport = TransportFactory.getTransport(stoliciya, 1, 0);
 		assertEquals(10, transport.getSpeed());
 	}
-		
+
 }
