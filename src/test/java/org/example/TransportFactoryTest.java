@@ -13,6 +13,11 @@ public class TransportFactoryTest {
 	City kulichki = new City("kulichki", 2631, false,false);
 
 	@Test
+	public void inputNullWeight() {
+		transport = TransportFactory.getTransport(stoliciya, 0, 10);
+		assertEquals(0, transport.getCapacity());
+	}
+	@Test
 	public void Truck() {
 	transport = TransportFactory.getTransport(gonduras,327, 1000);
 	assertTrue(transport instanceof Truck);
@@ -79,9 +84,10 @@ public class TransportFactoryTest {
 	}
 
 	//null
-	@Test
-	public void notAssert() {
+	@Test (expected = ArithmeticException.class)
+	public void inputNullHours() {
 		transport = TransportFactory.getTransport(stoliciya, 1, 0);
-		
+		assertEquals(10, transport.getSpeed());
 	}
+		
 }
