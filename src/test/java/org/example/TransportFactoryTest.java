@@ -9,7 +9,7 @@ public class TransportFactoryTest {
 	private Transport transport;
 	City gonduras = new City("Gonduras", 2000,true,false);
 	City sosedsk = new City("Sosedsk", 15);
-	City stoliciya = new City("BigSity", 9100, true,true);
+	City stoliciya = new City("BigSity", 7128, true,true);
 	City kulichki = new City("kulichki", 2631, false,false);
 
 	@Test
@@ -54,5 +54,34 @@ public class TransportFactoryTest {
 	public void kulichkiTruck2() { //ниче нет
 		transport = TransportFactory.getTransport(kulichki, 1987, 1500);
 		assertTrue(transport instanceof Truck);
+	}
+	//Capacity
+	@Test
+	public void capacityRound1() { //верхняя грвница
+		transport = TransportFactory.getTransport(kulichki, 1999, 1500);
+		assertEquals(2000, transport.getCapacity());
+	}
+	@Test
+	public void capacityRound2() { //нижняя граница
+		transport = TransportFactory.getTransport(kulichki, 1, 1500);
+		assertEquals(500, transport.getCapacity());
+	}
+
+	@Test
+	public void speedRound1() { //верхняя  граница
+		transport = TransportFactory.getTransport(stoliciya, 1, 1);
+		assertEquals(7130, transport.getSpeed());
+	}
+	@Test
+	public void speedRound2() { //нижняя граница
+		transport = TransportFactory.getTransport(stoliciya, 1, 7000);
+		assertEquals(10, transport.getSpeed());
+	}
+
+	//null
+	@Test
+	public void notAssert() {
+		transport = TransportFactory.getTransport(stoliciya, 1, 0);
+		
 	}
 }
